@@ -21,8 +21,9 @@ const HeaderWrapper = styled.header`
 
 const MenuWrapper = styled.div`
   width: 100%;
-  height: 89px;
+  min-height: 89px;
   padding-top: 20px;
+  padding-bottom: 15px;
 `
 
 const MainWrapper = styled.main`

@@ -6,6 +6,8 @@ import Col from "react-bootstrap/lib/Col"
 
 import styled from "styled-components"
 
+import Slider from "./Slider"
+
 const Repair = styled.div`
   color: #ffffff;
   font-weight: 700;
@@ -38,13 +40,19 @@ const CallBtn = styled.button`
   font-weight: bold;
   line-height: 24px;
   margin-top: 32px;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    background-color: #af6f35;
+  }
 `
 
 class Main extends React.Component {
   render() {
     return (
       <Row>
-        <Col lg={5}>
+        <Col md={5}>
           <Repair>
             Качественный ремонт
             <span>iphone за 35 минут и гарантия 1 год</span>
@@ -55,8 +63,8 @@ class Main extends React.Component {
           </LightText>
           <CallBtn>Отправить заявку!</CallBtn>
         </Col>
-        <Col lg={6} lgOffset={1}>
-          sdfs
+        <Col md={6} mdOffset={1}>
+          <Slider />
         </Col>
       </Row>
     )

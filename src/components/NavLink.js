@@ -20,10 +20,10 @@ const StyledLink = styled.a`
   }
 `
 
-class Link extends React.Component {
+class NavLink extends React.Component {
   render() {
-    return <StyledLink href={this.props.link}> {this.props.text} </StyledLink>
+    return <StyledLink href={this.props.link}>{this.props.text}</StyledLink>
   }
 }
 
-export default Link
+export default NavLink

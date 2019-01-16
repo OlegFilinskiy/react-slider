@@ -39,6 +39,10 @@ const Calls = styled.div`
     color: #464646;
     font-size: 21px;
   }
+
+  @media (max-width: 992px) {
+    margin-top: 15px;
+  }
 `
 
 const CallButton = styled.button`
@@ -50,10 +54,15 @@ const CallButton = styled.button`
   font-size: 14px;
   font-weight: 400;
   border: none;
-  transition: all .3s;
+  transition: all 0.3s;
+  max-width: 100%;
 
   &:hover {
     background-color: #26a4b7;
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 20px;
   }
 `
 
@@ -73,22 +82,22 @@ class Menu extends React.Component {
   render() {
     return (
       <Row>
-        <Col lg={3}>
+        <Col xs={6} md={3}>
           <Repair>Ремонт айфонов в сервисном центре и на выезде</Repair>
         </Col>
-        <Col lg={3} lgOffset={1}>
+        <Col xs={6} md={3} mdOffset={1}>
           <WorkTime>
             Пн-пт с 10 до 20, сб,вс с 11 до 18
             <Address addr="Крещатик, 7/11" />
           </WorkTime>
         </Col>
-        <Col lg={3}>
+        <Col xs={6} md={3}>
           <Calls>
             Звонки принимаются 24 часа
             <TelNumber tel="0 (800) 500 00 00" />
           </Calls>
         </Col>
-        <Col lg={2}>
+        <Col xs={6} md={2}>
           <CallButton>Заказать звонок!</CallButton>
         </Col>
       </Row>
