@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 
-import styled from "styled-components"
 
 import Slide_1 from "../img/slide-1.jpg"
 import Slide_2 from "../img/slide-2.jpg"
@@ -19,7 +18,7 @@ class Slider extends React.Component {
           slideItem: `url(${Slide_2})`
         },
         {
-          slideItem: `url(${Slide_2})`
+          slideItem: `url(${Slide_3})`
         },
         {
           slideItem: `url(${Slide_4})`
@@ -77,7 +76,7 @@ class Slider extends React.Component {
       : this.setState({ active: this.state.max - 1 })
   }
 
-  dots(index, event) {
+  dots(index) {
     this.setState({
       active: index
     })
@@ -124,7 +123,7 @@ class Slider extends React.Component {
   }
 
   renderPlayPause() {
-    let playBtn
+    let playBtn;
 
     if (this.state.autoplay) {
       playBtn = (

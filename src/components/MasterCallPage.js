@@ -54,17 +54,15 @@ class Main extends React.Component {
             <Row>
                 <Col md={5}>
                     <Repair>
-                        Качественный ремонт
-                        <span>iphone за 35 минут и гарантия 1 год</span>
+                        Вызов мастера
                     </Repair>
                     <LightText>
                         Оставьте заявку на бесплатную диагностику без очереди, и получите
                         защитное стекло, стоимостью 400 грн, с установкой в подарок!
                     </LightText>
-                    <CallBtn>Отправить заявку!</CallBtn>
+                    <CallBtn>Вызвать мастера</CallBtn>
                 </Col>
                 <Col md={6} mdOffset={1}>
-                    <Slider/>
                 </Col>
             </Row>
         )
