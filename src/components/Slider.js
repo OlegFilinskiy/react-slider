@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 
-
 import Slide_1 from "../img/slide-1.jpg"
 import Slide_2 from "../img/slide-2.jpg"
 import Slide_3 from "../img/slide-3.jpg"
@@ -31,7 +30,7 @@ class Slider extends React.Component {
 
     this.state.max = this.state.slides.length
     this.intervalBetweenSlides = this.intervalBetweenSlides.bind(this)
-    this.toggleAutoplay = this.toggleAutoplay.bind(this)
+    this.toggleAutoPlay = this.toggleAutoPlay.bind(this)
     this.nextSlide = this.nextSlide.bind(this)
     this.prevSlide = this.prevSlide.bind(this)
   }
@@ -58,7 +57,7 @@ class Slider extends React.Component {
     }
   }
 
-  toggleAutoplay() {
+  toggleAutoPlay() {
     this.setState({
       autoplay: !this.state.autoplay
     })
@@ -76,7 +75,7 @@ class Slider extends React.Component {
       : this.setState({ active: this.state.max - 1 })
   }
 
-  dots(index) {
+  activeDots(index) {
     this.setState({
       active: index
     })
@@ -89,7 +88,7 @@ class Slider extends React.Component {
   }
 
   setSliderStyles() {
-    const transition = (this.state.active * -100) / this.state.slides.length
+    const transition = (this.state.active * - 100) / this.state.slides.length
 
     return {
       width: this.state.slides.length * 100 + "%",
@@ -98,13 +97,13 @@ class Slider extends React.Component {
   }
 
   renderSlides() {
-    const transition = 100 / this.state.slides.length + "%"
+    const widthOneSlide = 100 / this.state.slides.length + "%"
 
     return this.state.slides.map((item, index) => (
       <div
-        className="slider-item"
+        className="slider__item"
         key={index}
-        style={{ backgroundImage: item.slideItem, width: transition }}
+        style={{ backgroundImage: item.slideItem, width: widthOneSlide }}
       />
     ))
   }
@@ -112,10 +111,10 @@ class Slider extends React.Component {
   renderDots() {
     return this.state.slides.map((item, index) => (
       <li
-        className={this.isActive(index) + " dots"}
+        className={this.isActive(index) + " dots"} // Check if this slide is active. If yes, then assign the class="active"
         key={index}
         ref="dots"
-        onClick={this.dots.bind(this, index)}
+        onClick={this.activeDots.bind(this, index)} // Биндим прям здесь, чтобы получить index
       >
         <a>&#9679;</a>
       </li>
@@ -123,17 +122,17 @@ class Slider extends React.Component {
   }
 
   renderPlayPause() {
-    let playBtn;
+    let playPauseBtn;
 
     if (this.state.autoplay) {
-      playBtn = (
+      playPauseBtn = ( // Pause
         <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24">
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
         </svg>
       )
     } else {
-      playBtn = (
+      playPauseBtn = ( // Play
         <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24">
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
@@ -141,7 +140,7 @@ class Slider extends React.Component {
       )
     }
 
-    return playBtn
+    return playPauseBtn
   }
 
   renderArrows() {
@@ -167,12 +166,14 @@ class Slider extends React.Component {
   render() {
     return (
       <div className="slider">
-        <div className="wrapper" style={this.setSliderStyles()}>
+        <div className="slider__wrapper" style={this.setSliderStyles()}>
           {this.renderSlides()}
         </div>
         {this.renderArrows()}
-        <ul className="dots-container">{this.renderDots()}</ul>
-        <a className="toggle-play" onClick={this.toggleAutoplay}>
+        <ul className="dots-container">
+            {this.renderDots()}
+        </ul>
+        <a className="toggle-play" onClick={this.toggleAutoPlay}>
           {this.renderPlayPause()}
         </a>
       </div>

@@ -21,7 +21,7 @@ const Repair = styled.div`
   }
 `
 
-const LightText = styled.p`
+const LightText = styled.div`
   color: #ffffff;
   font-size: 18px;
   font-weight: 300;

@@ -15,11 +15,21 @@
     position: relative;
 }
 
-.slider .wrapper {
+.slider__wrapper {
     height: 400px;
     -webkit-transition: 0.5s all linear;
     transition: 0.5s all linear;
     will-change: transform;
+}
+
+.slider__item {
+    width: 555px;
+    height: 400px;
+    float: left;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-color: transparent;
 }
 
 .slider .arrows {
@@ -99,16 +109,6 @@
     text-decoration: none;
     opacity: 0.7;
     cursor: pointer;
-}
-
-.slider .slider-item {
-    width: 555px;
-    height: 400px;
-    float: left;
-    text-align: center;
-    background-size: cover;
-    background-position: center center;
-    background-color: transparent;
 }
 
 .link {

@@ -52,7 +52,7 @@ class Main extends React.Component {
     render() {
         return (
             <Row>
-                <Col md={5}>
+                <Col md={12}>
                     <Repair>
                         Вызов мастера
                     </Repair>
@@ -61,8 +61,6 @@ class Main extends React.Component {
                         защитное стекло, стоимостью 400 грн, с установкой в подарок!
                     </LightText>
                     <CallBtn>Вызвать мастера</CallBtn>
-                </Col>
-                <Col md={6} mdOffset={1}>
                 </Col>
             </Row>
         )

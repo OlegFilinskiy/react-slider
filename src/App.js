@@ -21,7 +21,7 @@ const url = process.env.PUBLIC_URL + "/img/bg.jpg"
 
 const HeaderWrapper = styled.header`
   width: 100%;
-  height: 48px;
+  min-height: 48px;
   background-color: #242424;
   opacity: 0.8;
 `

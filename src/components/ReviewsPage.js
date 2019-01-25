@@ -52,7 +52,7 @@ class Main extends React.Component {
     render() {
         return (
             <Row>
-                <Col md={5}>
+                <Col md={12}>
                     <Repair>
                         Отзывы клиентов
                     </Repair>
@@ -60,8 +60,6 @@ class Main extends React.Component {
                         "Ребята сделали чудо с моим барахлом. Все работает и несется в прекрасное далеко. Люблю целую.
                         Особенно милой была девочка с непонятного цвета волосами, ей отдельный привет!"
                     </LightText>
-                </Col>
-                <Col md={6} mdOffset={1}>
                 </Col>
             </Row>
         )
